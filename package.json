@@ -6,7 +6,10 @@
   "main": "index.js",
   "scripts": {
     "build": "cd frontend && npm install && npm run build",
-    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js",
+    "server": "nodemon \"../server.js\"",
+    "frontend": "npm start --frefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run frontend\""
   },
   "repository": {
     "type": "git",
@@ -32,6 +35,8 @@
     "eslint-plugin-react": "^7.21.2",
     "nodemon": "^2.0.4"
   },
-  "engines": {"node":"12.4.0", "npm": "6.9.0"}
-  
+  "engines": {
+    "node": "12.4.0",
+    "npm": "6.9.0"
+  }
 }
